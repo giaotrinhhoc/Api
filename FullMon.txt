@@ -1,5 +1,5 @@
 getgenv().Moon = function()
-    local url = 'https://xeter.vercel.app/api/FullMon'
+    local url = 'https://DoneBell.vercel.app/api/FullMon'
     local chooses
     local foundServers = game:GetService('HttpService'):JSONDecode(game:HttpGet(url))
     for i, v in foundServers do

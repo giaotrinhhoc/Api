@@ -1,5 +1,5 @@
 getgenv().Mirage = function()
-    local url = 'https://xeter.vercel.app/api/Mirage'
+    local url = 'https://DoneBell.vercel.app/api/Mirage'
     local chooses
     local foundServers = game:GetService('HttpService'):JSONDecode(game:HttpGet(url))
     for i, v in foundServers do
