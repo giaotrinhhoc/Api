@@ -1,0 +1,34 @@
+getgenv().Hop = function()
+    local url = 'https://xeterapi.vercel.app/api/Cursed'
+    local chooses
+    local foundServers = game:GetService('HttpService'):JSONDecode(game:HttpGet(url))
+    for i, v in foundServers do
+        if v.jobId ~= game.JobId then
+            chooses = v
+        end
+    end
+    game:GetService("TeleportService"):TeleportToPlaceInstance(4442272183, chooses.jobId, game.Players.LocalPlayer)
+end
+
+function Check()
+    for _,Boss in pairs(game.Workspace.Enemies:GetChildren()) do
+        if Boss.Name == "Cursed Captain" or Boss.Name == "Soul Reaper" and DetectingPart(Boss) and Boss.Humanoid.Health > 0 then
+            return Boss
+        end
+    end
+    for _,Boss in pairs(game.ReplicatedStorage:GetChildren()) do
+        if Boss.Name == "Cursed Captain" or Boss.Name == "Soul Reaper" then
+            return Boss
+        end
+    end
+end
+
+spawn(function()
+    while task.wait(3) do
+        pcall(function()
+            if not Check() then
+                return Hop()
+            end
+        end)
+    end
+end)
