@@ -1,5 +1,5 @@
 getgenv().Sword = function()
-    local url = 'https://DoneBell.vercel.app/api/Oroshi'
+    local url = 'https://xeterapi.vercel.app/api/Oroshi'
     local chooses
     local foundServers = game:GetService('HttpService'):JSONDecode(game:HttpGet(url))
     for i, v in foundServers do
